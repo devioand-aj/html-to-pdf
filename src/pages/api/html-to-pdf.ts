@@ -27,6 +27,7 @@ export default async function handler(
       );
       res.send(pdfBuffer);
     } catch (error) {
+      console.log("Failed to generate PDF", { error });
       res.status(500).json({ error: "Failed to generate PDF" });
     }
   } else {
